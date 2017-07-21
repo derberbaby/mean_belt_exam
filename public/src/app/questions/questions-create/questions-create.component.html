@@ -1,0 +1,32 @@
+<a [routerLink]="['/main']">Home</a>
+<a (click)="logout()" [routerLink]="['/']">Logout</a>
+
+<div id="form">
+<h1>New Question</h1>
+<form (submit)="createQuestion()" #questionForm="ngForm">
+	<label for="question"> Question: 
+		<textarea
+		name="question"
+		required
+		minlength="10"
+		cols="50"
+		rows="10"
+		[(ngModel)]="question.content"
+		#newQuestion="ngModel">
+		</textarea>
+		<p *ngIf="question.errors?.required && (question.touched || question.dirty)">Please type a question.</p>
+		<p *ngIf="question.errors?.minlength && (question.touched || question.dirty)">Should be at least 10 characters long.</p>
+	</label>
+	<label for="description"> Description (optional)
+		<textarea 
+		name="desc"
+		cols="50"
+		rows="10"
+		[(ngModel)]="question.desc"
+		#newDesc="ngModel">	
+		</textarea>
+	</label>
+	<button [routerLink]="['/main']">Cancel</button>
+	<input type="submit" [disabled]="!questionForm.form.valid" value="Submit">
+</form>
+</div>

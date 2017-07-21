@@ -1,0 +1,14 @@
+<div id="wrapper">
+	<a [routerLink]="['/main']">Home</a> | <a [routerLink]="['/']">Answer this Question</a> | <a (click)="logout()" [routerLink]="['/']">Logout</a>
+
+	<h1>{{ question.content }}</h1>
+	<p>{{ question.desc }}</p>
+
+	<div *ngFor="let answer of question.answers">
+		<p>{{ answer._User }}</p>
+		<p>{{ answer.content }}</p>
+		<p>{{ answer.likes }}</p>
+		<button (click)="addLike()">Like!</button>
+	</div>
+</div>
+
