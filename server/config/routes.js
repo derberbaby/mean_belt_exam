@@ -17,4 +17,6 @@ module.exports = (app) => {
   app.get('/api/showone/:question_id', questions.showone);
 
   app.post('/api/add_answer/:question_id', questions.add_answer);
+
+  app.post('/api/add_like/:answer_id', questions.add_like);
 }

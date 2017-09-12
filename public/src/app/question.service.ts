@@ -26,8 +26,15 @@ export class QuestionService {
   		.toPromise()
   }
 
-  serviceAttachAnswer(question) {
-  	return this._http.post('/api/add_answer/' + question._id, question)
+  serviceAttachAnswer(question, answer) {
+  	return this._http.post('/api/add_answer/' + question._id, answer)
+  		.map( (response) => response.json())
+  		.toPromise()
+  }
+
+  serviceAddLike(answer_id) {
+  	console.log('service', answer_id);
+  	return this._http.post('/api/add_like/' + answer_id, answer_id)
   		.map( (response) => response.json())
   		.toPromise()
   }

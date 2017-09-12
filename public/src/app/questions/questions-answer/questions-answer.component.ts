@@ -33,7 +33,7 @@ export class QuestionsAnswerComponent implements OnInit {
   }
 
   attachAnswer(question) {
-  	this._questionService.serviceAttachAnswer(question)
+  	this._questionService.serviceAttachAnswer(question, this.answer)
   		.then( (success) => {
   			this._router.navigate(['question', question._id])
   		})

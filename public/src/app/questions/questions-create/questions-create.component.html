@@ -14,8 +14,8 @@
 		[(ngModel)]="question.content"
 		#newQuestion="ngModel">
 		</textarea>
-		<p *ngIf="question.errors?.required && (question.touched || question.dirty)">Please type a question.</p>
-		<p *ngIf="question.errors?.minlength && (question.touched || question.dirty)">Should be at least 10 characters long.</p>
+		<p *ngIf="newQuestion.errors?.required && (newQuestion.touched || newQuestion.dirty)">Please type a question.</p>
+		<p *ngIf="newQuestion.errors?.minlength && (newQuestion.touched || newQuestion.dirty)">Should be at least 10 characters long.</p>
 	</label>
 	<label for="description"> Description (optional)
 		<textarea 

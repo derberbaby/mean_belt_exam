@@ -1,0 +1,17 @@
+#form {
+	margin: auto;
+	padding: 20px;
+	width: 500px;
+}
+
+form {
+	text-align: right;
+}
+label {
+	display: block;
+	vertical-align: top;
+}
+
+p {
+	color: red;
+}
